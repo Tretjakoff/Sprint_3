@@ -1,11 +1,11 @@
 package model;
 
 public class Courier {
-    private String login;// опиши поля
+    private String login;// РѕРїРёСЃС‹РІР°РµРј РїРѕР»СЏ
     private String password;
     private String firstName;
 
-    public Courier(String login, String password, String firstName){// добавь конструкторы — со всеми параметрами и без параметров
+    public Courier(String login, String password, String firstName){// РґРѕР±Р°РІР»СЏРµРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹ вЂ” СЃРѕ РІСЃРµРјРё РїР°СЂР°РјРµС‚СЂР°РјРё Рё Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
         this.login = login;
         this.password = password;
         this.firstName = firstName;
@@ -13,7 +13,7 @@ public class Courier {
     public Courier(){
 
     }
-    // добавь геттеры и сеттеры для всех полей
+    // РґРѕР±Р°РІР»СЏРµРј РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹ РґР»СЏ РІСЃРµС… РїРѕР»РµР№
     public String getLogin() {
         return login;
     }

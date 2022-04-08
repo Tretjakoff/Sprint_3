@@ -10,10 +10,4 @@ public final class Utils {
         return RandomStringUtils.randomAlphabetic(length);
     }
 
-    public static String randomStation() {
-        return RandomStringUtils.randomNumeric(1,23);
-    }
-
-
-
 }

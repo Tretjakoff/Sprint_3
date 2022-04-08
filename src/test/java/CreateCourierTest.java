@@ -1,27 +1,17 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import model.Courier;
 import model.Login;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
-import static io.restassured.RestAssured.given;
 
 public class CreateCourierTest {
 
     Courier courier;
     Integer id;
-
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-    }
 
 
     @After
@@ -29,9 +19,7 @@ public class CreateCourierTest {
         Login login = new Login(courier.getLogin(), courier.getPassword());
         Response response = new Requests().authorizeCourier(login);
         id = response.then().extract().path("id");
-        System.out.println(id);
-        given().when()
-                .delete("/api/v1/courier/" + id);
+        new Requests().deleteCourier(id);
     }
 
     @Test
@@ -57,7 +45,7 @@ public class CreateCourierTest {
         Response responseTwo = new Requests().createCourier(courier);
         responseTwo.then().assertThat()
                 .statusCode(409)
-                .body("message", Matchers.is("Этот логин уже используется. Попробуйте другой."));
+                .body("message", Matchers.is("Р­С‚РѕС‚ Р»РѕРіРёРЅ СѓР¶Рµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РґСЂСѓРіРѕР№."));
 
     }
 

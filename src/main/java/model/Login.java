@@ -1,17 +1,17 @@
 package model;
 
 public class Login {
-    private String login;// опиши поля
+    private String login;
     private String password;
 
-    public Login(String login, String password){// добавь конструкторы — со всеми параметрами и без параметров
+    public Login(String login, String password){
         this.login = login;
         this.password = password;
     }
     public Login(){
 
     }
-    // добавь геттеры и сеттеры для всех полей
+
     public String getLogin() {
         return login;
     }

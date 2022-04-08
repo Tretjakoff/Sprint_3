@@ -1,11 +1,8 @@
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import model.Order;
 import org.hamcrest.Matchers;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -17,9 +14,9 @@ import java.util.List;
 public class CreateOrderColorParametrizedTest {
 
     private final Order order = new Order(
-            "»‚‡Ì",
-            "»‚‡ÌÓ‚",
-            "ÃÓÒÍ‚‡",
+            "–ò–≤–∞–Ω",
+            "–ò–≤–∞–Ω–æ–≤",
+            "–ú–æ—Å–∫–≤–∞",
             "5",
             "79529976810",
             3,
@@ -43,19 +40,6 @@ public class CreateOrderColorParametrizedTest {
 
     public CreateOrderColorParametrizedTest(List<String> colors) {
         this.colors = colors;
-    }
-
-
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru";
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-    }
-
-
-    @After
-    public void cleanUp() {
-
     }
 
     @Test
